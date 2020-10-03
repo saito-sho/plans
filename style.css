@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+}
+
+header {
+    background-color: #ccc;
+    text-align: center;
+}
+
+.today {
+    color: #666;
+    margin: 0px;
+    font-size: 58px;
+}
+
+main {
+    background-color: #369;
+}
+
+p {
+    display: inline-block;
+}
+
+.first-line {
+    color: cornsilk;
+    font-size: 33px;
+    margin-left: 50px;
+}
+
+.first-line-1 {
+    margin-right: 200px;
+}
+
+.third-line{
+    color: cornsilk;
+    font-size: 33px;
+    margin-left: 50px;
+}
+
+.third-line-1{
+    margin-right: 350px;
+}
+
+.third-line-2{
+    margin-right: 200px;
+}
+
+.fourth-line{
+    color: cornsilk;
+    font-size: 33px;
+    margin-left: 50px;
+}

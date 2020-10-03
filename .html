@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <p class="today">搭乗口</p>
+        <script class="today">
+            const today = new Date();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+            document.write(month + "-" + day);
+        </script>
+    </header>
+    <main>
+        <div class="first-line">
+            <p class="first-line-1">会社</p>
+            <p>便名</p>
+        </div>
+
+        <div class="third-line">
+            <p class="third-line-1">行先</p>
+            <p class="third-line-2">定刻</p>
+            <p>変更</p>
+        </div>
+        
+        <div class="fourth-line">
+            <p>備考</p>
+        </div>
+        
+    </main>
+</body>
+
+</html>
