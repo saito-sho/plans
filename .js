@@ -1,4 +1,4 @@
-const url = new URL(document.location);
+const url = new encodeURL(document.location);
 console.log(url);
 const params=url.searchParams;
 console.log(params)
