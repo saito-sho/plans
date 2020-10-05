@@ -10,29 +10,43 @@
 
 <body>
     <header>
-        <p class="today">搭乗口</p>
-        <script class="today">
+        <p class="gate">搭乗口</p>
+        <div id="today"></div>
+        <script>
             const today = new Date();
             const month = today.getMonth() + 1;
             const day = today.getDate();
-            document.write(month + "-" + day);
+            window.document.getElementById('today').innerText =  month + "-" + day;
         </script>
     </header>
     <main>
-        <div class="first-line">
-            <p class="first-line-1">会社</p>
+        <div class="first_line">
+            <p class="first_line_1">会社</p>
             <p>便名</p>
         </div>
+        <div class="second_line">
+            <div id="company"></div>
+            <div id="flight"></div>
+        </div>
 
-        <div class="third-line">
-            <p class="third-line-1">行先</p>
-            <p class="third-line-2">定刻</p>
+        <div class="third_line">
+            <p class="third_line_1">行先</p>
+            <p class="third_line_2">定刻</p>
             <p>変更</p>
         </div>
 
-        <div class="fourth-line">
-            <p>備考</p>
+        <div class="fourth_line">
+            <div id="destination"></div>
         </div>
+
+        <div class="fifth_line">
+            <div id="time"></div>
+            <div id="changed_time"></div>
+            <p>備考</p>
+            <div id="notice"></div>
+        </div>
+
+
 
     </main>
 </body>

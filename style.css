@@ -5,12 +5,20 @@ body {
 header {
     background-color: #ccc;
     text-align: center;
+    padding: 20px 0px 10px 0px;
 }
 
-.today {
+.gate {
     color: #666;
     margin: 0px;
     font-size: 58px;
+}
+
+#today{
+    color: #666;
+    margin: 0px 0px 0px 20px;
+    font-size: 58px;
+    display: inline-block;
 }
 
 main {
@@ -21,31 +29,37 @@ p {
     display: inline-block;
 }
 
-.first-line {
+.first_line {
     color: cornsilk;
     font-size: 33px;
     margin-left: 50px;
 }
 
-.first-line-1 {
+.first_line_1 {
     margin-right: 200px;
 }
 
-.third-line{
+.third_line{
     color: cornsilk;
     font-size: 33px;
     margin-left: 50px;
 }
 
-.third-line-1{
+.third_line_1{
     margin-right: 350px;
 }
 
-.third-line-2{
+.third_line_2{
     margin-right: 200px;
 }
 
-.fourth-line{
+.fourth_line{
+    color: cornsilk;
+    font-size: 33px;
+    margin-left: 50px;
+}
+
+.fifth_line{
     color: cornsilk;
     font-size: 33px;
     margin-left: 50px;
