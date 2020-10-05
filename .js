@@ -1,4 +1,6 @@
-const params = new URL(document.location).searchParams;
+const url = new URL(document.location);
+console.log(url);
+const params=url.searchParams;
 console.log(params)
 const company=params.get('company');
 console.log(params)
