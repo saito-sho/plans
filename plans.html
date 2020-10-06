@@ -8,45 +8,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
-
 <body>
     <header>
         <p class="gate">搭乗口</p>
         <div id="today"></div>
-        <script>
-            const today = new Date();
-            const month = today.getMonth() + 1;
-            const day = today.getDate();
-            window.document.getElementById('today').innerText = month + "-" + day;
-        </script>
     </header>
+
     <main>
         <div class="first_line">
-            <p class="first_line_1">会社</p>
+            <p class="first_1">会社</p>
             <p>便名</p>
         </div>
+
         <div class="second_line">
             <div id="company"></div>
             <div id="flight"></div>
         </div>
 
-        <div class="third_line">
-            <p class="third_line_1">行先</p>
-            <p class="third_line_2">定刻</p>
-            <p>変更</p>
-        </div>
-
-        <div class="fourth_line">
+        <div class="left">
+            <p>行先</p>
             <div id="destination"></div>
         </div>
 
-        <div class="fifth_line">
-            <div id="time"></div>
-            <div id="changed_time"></div>
-            <p>備考</p>
-            <div id="notice"></div>
+        <div class="right_1">
+            <p class="right_line">定刻</p>
+            <p>変更</p>
         </div>
+
+        <div class="right_2">
+            <div id="time"></div>
+            <div class="arrow">➔</div>
+            <div id="changed_time"></div>
+        </div>
+
+        <p class="right_3">備考</p>
+        <div id="notice"></div>
     </main>
     <script type="text/javascript" src="plans.js"></script>
 </body>

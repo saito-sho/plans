@@ -1,3 +1,4 @@
+// クエリパラメーター取得
 const params = (new URL(document.location)).searchParams;
 
 const company = params.get('company');
@@ -13,3 +14,9 @@ window.document.getElementById('destination').innerText = destination;
 window.document.getElementById('time').innerText = time;
 window.document.getElementById('changed_time').innerText = changed_time;
 window.document.getElementById('notice').innerText = notice;
+
+// 今日の日付
+const today = new Date();
+const month = today.getMonth() + 1;
+const day = today.getDate();
+window.document.getElementById('today').innerText = month + "-" + day;

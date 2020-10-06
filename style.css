@@ -1,20 +1,27 @@
+html {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     margin: 0px;
+    width: 1280px;
 }
 
 header {
     background-color: #ccc;
     text-align: center;
-    padding: 20px 0px 10px 0px;
+    height: 118px;
 }
 
 .gate {
     color: #666;
     margin: 0px;
     font-size: 58px;
+    padding-top: 20px;
 }
 
-#today{
+#today {
     color: #666;
     margin: 0px 0px 0px 20px;
     font-size: 58px;
@@ -23,6 +30,7 @@ header {
 
 main {
     background-color: #369;
+    height: 602px;
 }
 
 p {
@@ -35,32 +43,72 @@ p {
     margin-left: 50px;
 }
 
-.first_line_1 {
+.first_1 {
     margin-right: 200px;
 }
 
-.third_line{
+.second_line {
     color: cornsilk;
-    font-size: 33px;
+    font-size: 42px;
     margin-left: 50px;
 }
 
-.third_line_1{
-    margin-right: 350px;
+#company {
+    display: inline-block;
+    width: 270px;
 }
 
-.third_line_2{
+#flight {
+    display: inline-block;
+}
+
+.left {
+    color: cornsilk;
+    font-size: 33px;
+    margin-left: 50px;
+    float: left;
+    width: 600px;
+    height: 500px;
+}
+
+#destination {
+    font-size: 100px;
+}
+
+.right_1 {
+    color: cornsilk;
+    font-size: 33px;
+}
+
+.right_line {
     margin-right: 200px;
 }
 
-.fourth_line{
-    color: cornsilk;
-    font-size: 33px;
-    margin-left: 50px;
+.right_2 {
+    font-size: 67px;
 }
 
-.fifth_line{
+#time {
+    display: inline-block;
+    color: cornsilk;
+}
+
+.arrow {
+    display: inline-block;
+    color: gold;
+}
+
+#changed_time {
+    display: inline-block;
+    color: gold;
+}
+
+.right_3 {
     color: cornsilk;
     font-size: 33px;
-    margin-left: 50px;
+}
+
+#notice {
+    color: cornsilk;
+    font-size: 42px;
 }
