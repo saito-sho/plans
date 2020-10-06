@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <div id="error">
+        <div id="noneCompany" class="error"></div>
+        <div id="noneFlight" class="error"></div>
+        <div id="noneDestination" class="error"></div>
+        <div id="noneTime" class="error"></div>
+        <div id="description"></div>
+        <div id="parapara"></div>
+    </div>
     <header>
         <p class="gate">搭乗口</p>
         <div id="today"></div>
@@ -32,18 +40,18 @@
 
         <div class="right_1">
             <p class="right_line">定刻</p>
-            <p>変更</p>
+            <div id="change"></div>
         </div>
 
         <div class="right_2">
             <div id="time"></div>
-            <div class="arrow">➔</div>
-            <div id="changed_time"></div>
+            <div id="changedTime"></div>
         </div>
 
         <p class="right_3">備考</p>
         <div id="notice"></div>
-    </main>
+
+       </main>
     <script type="text/javascript" src="plans.js"></script>
 </body>
 

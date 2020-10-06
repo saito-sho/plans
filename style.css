@@ -3,6 +3,25 @@ html {
     height: auto;
 }
 
+#error{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    height: 0px;
+}
+
+.error{
+    display: inline-block;
+}
+
+#description{
+    color: black;
+}
+
+#parapara{
+    color: black;
+}
+
 body {
     margin: 0px;
     width: 1280px;
@@ -84,6 +103,10 @@ p {
     margin-right: 200px;
 }
 
+#change{
+    display: inline-block;
+}
+
 .right_2 {
     font-size: 67px;
 }
@@ -93,12 +116,7 @@ p {
     color: cornsilk;
 }
 
-.arrow {
-    display: inline-block;
-    color: gold;
-}
-
-#changed_time {
+#changedTime {
     display: inline-block;
     color: gold;
 }
