@@ -37,9 +37,9 @@ function checkTime() {
 }
 
 function description() {
-    if (company === null || flight === null || destination === null || time === null||company === "" || flight === "" || destination === "" || time === "") {
+    if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "") {
         window.document.getElementById('description').innerText = 'クエリパラメータから入力してください';
-        window.document.getElementById('parapara').innerText = 'company=会社名　flight=便名　destination=行先　time=定刻　changedTime=定刻変更　notice=備考'
+        window.document.getElementById('parameters').innerText = 'company=会社名　flight=便名　destination=行先　time=定刻　changedTime=定刻変更　notice=備考';
         window.document.getElementById("error").style.border = "5px solid red";
         window.document.getElementById("error").style.height = "90px";
     }

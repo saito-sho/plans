@@ -3,22 +3,22 @@ html {
     height: auto;
 }
 
-#error{
+#error {
     text-align: center;
     color: red;
     font-size: 20px;
     height: 0px;
 }
 
-.error{
+.error {
     display: inline-block;
 }
 
-#description{
+#description {
     color: black;
 }
 
-#parapara{
+#parameters {
     color: black;
 }
 
@@ -103,7 +103,7 @@ p {
     margin-right: 200px;
 }
 
-#change{
+#change {
     display: inline-block;
 }
 
