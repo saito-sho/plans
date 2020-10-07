@@ -1,6 +1,6 @@
 // クエリパラメーター取得
 const params = (new URL(document.location)).searchParams;
-const url = "https://saito-sho.github.io/plans/plans.html" ;
+const url = "https://saito-sho.github.io/plans/plans.html";
 
 let company = params.get('company');
 let flight = params.get('flight');
@@ -28,7 +28,17 @@ function check(a, b, c, d) {
 function checkTime() {
     if (time === null || time === "") {
         window.document.getElementById('noneTime').innerText = '＊定刻を入力してください';
+    } else if (!(time.match(/^[0-9:]+$/))) {
+        window.document.getElementById('noneTime').innerText = "＊時刻は半角数字で入力してください";
+    } else if (time.length > 5) {
+        window.document.getElementById('noneTime').innerText = "＊時刻は5文字以内で入力してください";
     } else if (time !== null && changedTime === null || changedTime === "") {
+        window.document.getElementById('time').innerText = time;
+    } else if (!(changedTime.match(/^[0-9:]+$/))) {
+        window.document.getElementById('noneTime').innerText = "＊変更時刻は半角数字で入力してください";
+        window.document.getElementById('time').innerText = time;
+    } else if (changedTime.length > 5) {
+        window.document.getElementById('noneTime').innerText = "＊変更時刻は5文字以内で入力してください";
         window.document.getElementById('time').innerText = time;
     } else {
         window.document.getElementById('time').innerText = time;
@@ -39,16 +49,17 @@ function checkTime() {
 
 // エラー時の入力画面
 function description() {
-    if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "") {
+    if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "" || !(time.match(/^[0-9:]+$/)) || !(changedTime.match(/^[0-9:]+$/))) {
         window.document.getElementById('description').innerText = '必須項目を入力してください';
         textCreate('textCompany', '会社名', '必須', company, 't-company');
         textCreate('textFlight', '便名', '必須', flight, 't-flight');
         textCreate('textDestination', '行先', '必須', destination, 't-destination');
         textCreate('textTime', '定刻', '必須', time, 't-time');
-        textCreate('textChangedTime', '変更時間', "任意", changedTime, 't-changedTime')
-        textCreate('textNotice', '備考', '任意', notice, 't-notice')
+        textCreate('textChangedTime', '変更時間', "任意", changedTime, 't-changedTime');
+        textCreate('textNotice', '備考', '任意', notice, 't-notice');
+        btnCreate();
         window.document.getElementById("error").style.border = "5px solid red";
-        window.document.getElementById("error").style.height = "150px";
+        window.document.getElementById("error").style.height = "160px";
     }
 }
 // テキストボックスの表示
@@ -70,6 +81,16 @@ function textCreate(a, b, c, d, id) {
     }
 }
 
+// ボタンの表示
+function btnCreate() {
+    const text = window.document.getElementById('outputBtn');
+    const input = document.createElement("input");
+    input.setAttribute("type", "submit");
+    input.setAttribute("value", "決定");
+    input.setAttribute("onclick", "textInput()");
+    text.appendChild(input);
+}
+
 // 発行ボタン
 function textInput() {
     company = window.document.getElementById('t-company').value;
@@ -80,12 +101,25 @@ function textInput() {
     notice = window.document.getElementById('t-notice').value;
     params.set('company', company);
     params.set('flight', flight);
-    params.set('destination',destination);
-    params.set('time',time);
-    params.set('changedTime',changedTime);
-    params.set('notice',notice);
-    console.log(url+'?'+params.toString());
+    params.set('destination', destination);
+    params.set('time', time);
+    params.set('changedTime', changedTime);
+    params.set('notice', notice);
+    
+    const btn = window.document.getElementById('outputLink')
+    const input= document.createElement("input");
+    input.setAttribute("type","submit");
+    input.setAttribute("value","発行します");
+    input.setAttribute("onclick","output()");
+    btn.appendChild(input);
+
+    console.log(url + '?' + params.toString());
 }
+
+function output(){
+    document.location = "url + '?' + params.toString()";
+}
+
 
 
 // 今日の日付
