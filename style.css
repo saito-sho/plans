@@ -8,6 +8,7 @@ html {
     color: red;
     font-size: 20px;
     height: 0px;
+    
 }
 
 .error {
@@ -18,8 +19,9 @@ html {
     color: black;
 }
 
-#parameters {
+#textCompany,#textFlight,#textDestination,#textTime,#textChangedTime,#textNotice {
     color: black;
+    display: inline-block;
 }
 
 body {
@@ -130,3 +132,9 @@ p {
     color: cornsilk;
     font-size: 42px;
 }
+
+input[type=text]{
+    width:200px;
+    height:15px;
+    }
+

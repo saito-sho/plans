@@ -1,12 +1,13 @@
 // クエリパラメーター取得
 const params = (new URL(document.location)).searchParams;
+const url = "https://saito-sho.github.io/plans/plans.html" ;
 
-const company = params.get('company');
-const flight = params.get('flight');
-const destination = params.get('destination');
-const time = params.get('time');
-const changedTime = params.get('changedTime');
-const notice = params.get('notice');
+let company = params.get('company');
+let flight = params.get('flight');
+let destination = params.get('destination');
+let time = params.get('time');
+let changedTime = params.get('changedTime');
+let notice = params.get('notice');
 
 // クエリパラメータチェック
 check('noneCompany', '会社名', 'company', company);
@@ -36,14 +37,56 @@ function checkTime() {
     }
 }
 
+// エラー時の入力画面
 function description() {
     if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "") {
-        window.document.getElementById('description').innerText = 'クエリパラメータから入力してください';
-        window.document.getElementById('parameters').innerText = 'company=会社名　flight=便名　destination=行先　time=定刻　changedTime=定刻変更　notice=備考';
+        window.document.getElementById('description').innerText = '必須項目を入力してください';
+        textCreate('textCompany', '会社名', '必須', company, 't-company');
+        textCreate('textFlight', '便名', '必須', flight, 't-flight');
+        textCreate('textDestination', '行先', '必須', destination, 't-destination');
+        textCreate('textTime', '定刻', '必須', time, 't-time');
+        textCreate('textChangedTime', '変更時間', "任意", changedTime, 't-changedTime')
+        textCreate('textNotice', '備考', '任意', notice, 't-notice')
         window.document.getElementById("error").style.border = "5px solid red";
-        window.document.getElementById("error").style.height = "90px";
+        window.document.getElementById("error").style.height = "150px";
     }
 }
+// テキストボックスの表示
+function textCreate(a, b, c, d, id) {
+    window.document.getElementById(a).innerText = b
+    const text = window.document.getElementById(a);
+    const input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("id", id)
+    input.setAttribute("maxlength", "5");
+    input.setAttribute("placeholder", c);
+    if (time || changedTime) {
+        input.setAttribute("style", "”ime-mode:disabled;”")
+    }
+    text.appendChild(input);
+    if (d !== null || d !== "") {
+        window.document.getElementById(id).value = d
+
+    }
+}
+
+// 発行ボタン
+function textInput() {
+    company = window.document.getElementById('t-company').value;
+    flight = window.document.getElementById('t-flight').value;
+    destination = window.document.getElementById('t-destination').value;
+    time = window.document.getElementById('t-time').value;
+    changedTime = window.document.getElementById('t-changedTime').value;
+    notice = window.document.getElementById('t-notice').value;
+    params.set('company', company);
+    params.set('flight', flight);
+    params.set('destination',destination);
+    params.set('time',time);
+    params.set('changedTime',changedTime);
+    params.set('notice',notice);
+    console.log(url+'?'+params.toString());
+}
+
 
 // 今日の日付
 const today = new Date();
