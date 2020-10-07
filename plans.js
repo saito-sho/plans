@@ -117,7 +117,7 @@ function textInput() {
 }
 
 function output() {
-    document.location = "url + '?' + params.toString()";
+    document.location = url + '?' + params.toString();
 }
 
 
