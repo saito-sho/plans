@@ -105,18 +105,18 @@ function textInput() {
     params.set('time', time);
     params.set('changedTime', changedTime);
     params.set('notice', notice);
-    
+
     const btn = window.document.getElementById('outputLink')
-    const input= document.createElement("input");
-    input.setAttribute("type","submit");
-    input.setAttribute("value","発行します");
-    input.setAttribute("onclick","output()");
+    const input = document.createElement("input");
+    input.setAttribute("type", "submit");
+    input.setAttribute("value", "発行します");
+    input.setAttribute("onclick", "output()");
     btn.appendChild(input);
 
     console.log(url + '?' + params.toString());
 }
 
-function output(){
+function output() {
     document.location = "url + '?' + params.toString()";
 }
 
