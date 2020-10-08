@@ -14,4 +14,6 @@ const btn = window.document.getElementById('outputLink')
 
     function output() {
     document.location = url + '?' + params.toString();
+
+    checkQuery();
 }

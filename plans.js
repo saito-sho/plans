@@ -16,7 +16,6 @@ check('noneFlight', '便名', 'flight', flight, 12);
 check('noneDestination', '行先', 'destination', destination, 10);
 checkTime();
 checkNotice();
-checkQuery();
 description();
 
 function check(a, b, c, d, word) {
