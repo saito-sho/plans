@@ -138,7 +138,7 @@ function textInput() {
 }
 // パラメータの更新
 function update() {
-    window.document.getElementById('description').innerText = '必須項目を入力してください';
+    window.document.getElementById('description').innerText = '更新箇所を入力してください';
     textCreate('textCompany', '会社名', '必須,12文字以内', company, 't-company', 12);
     textCreate('textFlight', '便名', '必須,12文字以内', flight, 't-flight', 12);
     textCreate('textDestination', '行先', '必須,10文字以内', destination, 't-destination', 10);
