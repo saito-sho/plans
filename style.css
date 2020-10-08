@@ -8,7 +8,6 @@ html {
     color: red;
     font-size: 20px;
     height: 0px;
-    
 }
 
 .error {
@@ -19,7 +18,7 @@ html {
     color: black;
 }
 
-#textCompany,#textFlight,#textDestination,#textTime,#textChangedTime,#textNotice {
+#textCompany, #textFlight, #textDestination, #textTime, #textChangedTime, #textNotice {
     color: black;
     display: inline-block;
 }
@@ -35,11 +34,16 @@ header {
     height: 118px;
 }
 
+#parametersBtn{
+    text-align: left;
+}
+
 .gate {
     color: #666;
     margin: 0px;
     font-size: 58px;
     padding-top: 20px;
+
 }
 
 #today {
@@ -51,7 +55,7 @@ header {
 
 main {
     background-color: #369;
-    height: 602px;
+    height: 650px;
 }
 
 p {
@@ -62,10 +66,15 @@ p {
     color: cornsilk;
     font-size: 33px;
     margin-left: 50px;
+    margin-right: 50px;
 }
 
 .first_1 {
-    margin-right: 200px;
+    width: 590px;
+}
+
+.first_2{
+    width: 550px;
 }
 
 .second_line {
@@ -76,11 +85,12 @@ p {
 
 #company {
     display: inline-block;
-    width: 270px;
+    width: 590px;
 }
 
 #flight {
     display: inline-block;
+    width: 550px;
 }
 
 .left {
@@ -133,8 +143,7 @@ p {
     font-size: 42px;
 }
 
-input[type=text]{
-    width:200px;
-    height:15px;
-    }
-
+input[type=text] {
+    width: 200px;
+    height: 15px;
+}

@@ -9,14 +9,16 @@
 </head>
 
 <body>
+    <div id="parametersBtn" onclick="style.display='none'"></div>
     <div id="error">
         <div id="noneCompany" class="error"></div>
         <div id="noneFlight" class="error"></div>
         <div id="noneDestination" class="error"></div>
         <div id="noneTime" class="error"></div>
+        <div id="noneNotice" class="error"></div>
         <div id="description"></div>
         <div class="text1">
-            <div id="textCompany"></div>
+            <div id="textCompany" maxlength="12"></div>
             <div id="textFlight"></div>
             <div id="textDestination"></div>
         </div>
@@ -25,11 +27,12 @@
             <div id="textChangedTime"></div>
             <div id="textNotice"></div>
         </div>
-       <div id="outputBtn"></div>
-       <div id="text3"></div>
-       <div id="outputLink"></div>
+        <div id="outputBtn"></div>
+        <div id="text3"></div>
+        <div id="outputLink"></div>
     </div>
     <header>
+       
         <p class="gate">搭乗口</p>
         <div id="today"></div>
     </header>
@@ -37,7 +40,7 @@
     <main>
         <div class="first_line">
             <p class="first_1">会社</p>
-            <p>便名</p>
+            <p class="first_2">便名</p>
         </div>
 
         <div class="second_line">
