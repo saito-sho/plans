@@ -17,3 +17,5 @@ const btn = window.document.getElementById('outputLink')
 
     checkQuery();
 }
+
+ !(changedTime === null) ||
