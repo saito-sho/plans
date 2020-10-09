@@ -73,11 +73,12 @@ function description() {
         textCreate('textTime', '定刻', '必須,例：12:00', time, 't-time', 5);
         textCreate('textChangedTime', '変更時間', '任意,例12:30', changedTime, 't-changedTime', 5);
         textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
-        btnCreate1();
-        window.document.getElementById("error").style.border = "5px solid red";
+        btnCreate("o-btn","outputBtn","決定","textInput()");
+        window.document.getElementById("error").style.border = "5px solid white";
         window.document.getElementById("error").style.height = "160px";
     } else {
-        btnCreate2()
+        btnCreate("p-btn","parametersBtn","データ更新","update()");
+        window.document.getElementById("header-text").style.paddingLeft = "100px"
     }
 }
 // テキストボックスの表示
@@ -99,23 +100,14 @@ function textCreate(a, b, c, d, id, word) {
     }
 }
 
-// 発行ボタンの表示
-function btnCreate1() {
-    const text = window.document.getElementById('outputBtn');
+// 発行ボタンとパラメター生成ボタンの表示
+function btnCreate(divBtn,btnId,value,onclick) {
+    const text = window.document.getElementById(divBtn);
     const input = document.createElement("input");
     input.setAttribute("type", "submit");
-    input.setAttribute("value", "決定");
-    input.setAttribute("onclick", "textInput()");
-    text.appendChild(input);
-}
-
-// パラメータ生成ボタン
-function btnCreate2() {
-    const text = window.document.getElementById('parametersBtn');
-    const input = document.createElement("input");
-    input.setAttribute("type", "submit");
-    input.setAttribute("value", "データ更新");
-    input.setAttribute("onclick", "update()");
+    input.setAttribute("id",btnId)
+    input.setAttribute("value", value);
+    input.setAttribute("onclick", onclick);
     text.appendChild(input);
 }
 
@@ -145,9 +137,10 @@ function update() {
     textCreate('textTime', '定刻', '必須,例:12:00', time, 't-time', 5);
     textCreate('textChangedTime', '変更時間', '任意,例:12:30', changedTime, 't-changedTime', 5);
     textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
-    btnCreate1();
-    window.document.getElementById("error").style.border = "5px solid red";
+    btnCreate("o-btn","outputBtn","決定","textInput()");
+    window.document.getElementById("error").style.border = "5px solid white";
     window.document.getElementById("error").style.height = "160px";
+    window.document.getElementById("header-text").style.paddingLeft = "0px"
 
 }
 

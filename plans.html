@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <div id="parametersBtn" onclick="style.display='none'"></div>
     <div id="error">
         <div id="noneCompany" class="error"></div>
         <div id="noneFlight" class="error"></div>
@@ -27,46 +26,48 @@
             <div id="textChangedTime"></div>
             <div id="textNotice"></div>
         </div>
-        <div id="outputBtn"></div>
-        <div id="text3"></div>
-        <div id="outputLink"></div>
+        <div id="o-btn"></div>
+        
     </div>
     <header>
-       
-        <p class="gate">搭乗口</p>
-        <div id="today"></div>
+        <div id="p-btn" onclick="style.display='none'"></div>
+        <div id="header-text">
+        <p class="gate color2">搭乗口</p>
+        <div id="today" class="color2"></div>
+        </div>
     </header>
 
     <main>
-        <div class="first_line">
+        <div class="first_line color">
             <p class="first_1">会社</p>
             <p class="first_2">便名</p>
         </div>
 
-        <div class="second_line">
+        <div class="second_line color">
             <div id="company"></div>
             <div id="flight"></div>
         </div>
 
-        <div class="left">
+        <div class="left color">
             <p>行先</p>
             <div id="destination"></div>
         </div>
 
-        <div class="right_1">
+        <div class="right_1 color">
             <p class="right_line">定刻</p>
             <div id="change"></div>
         </div>
 
         <div class="right_2">
-            <div id="time"></div>
-            <div id="changedTime"></div>
+            <div id="time" class="color"></div>
+            <div id="changedTime" class="color"></div>
         </div>
 
-        <p class="right_3">備考</p>
-        <div id="notice"></div>
-
+        <p class="right_3 color">備考</p>
+        <div id="notice" class="color"></div>
+        
     </main>
+
     <script type="text/javascript" src="plans.js"></script>
 </body>
 

@@ -1,11 +1,13 @@
 html {
     max-width: 100%;
     height: auto;
+    background-color:#E0E3DA;
 }
 
 #error {
     text-align: center;
     color: red;
+    background-color:#E0E3DA ;
     font-size: 20px;
     height: 0px;
 }
@@ -23,23 +25,69 @@ html {
     display: inline-block;
 }
 
+#outputBtn{
+    text-align: center;
+    color: white;
+    border: 2px solid black;
+  border-radius: 0;
+  background: #519D9E;
+  transition: 0.5s;
+  width: 100px;
+  height: 30px;
+}
+
+#outputBtn:hover{
+    color: black;
+    background: #FFBC42;
+    cursor: pointer;
+}
+
 body {
-    margin: 0px;
+    margin: 0px auto;
     width: 1280px;
 }
 
+.color{
+    color:#E0E3DA;
+}
+
+.color2{
+    color: white;
+}
+
 header {
-    background-color: #ccc;
-    text-align: center;
+    background-color:#58C9B9;
     height: 118px;
 }
 
+#header-text{
+    text-align: center;
+}
+
+
+#p-btn{
+    float: right;
+    display: block;
+}
+
 #parametersBtn{
-    text-align: left;
+    text-align: center;
+    color: white;
+    border: 2px solid #000;
+  border-radius: 0;
+  background: #519D9E;
+  transition: 0.5s;
+  width: 100px;
+  height: 30px;
+}
+
+#parametersBtn:hover{
+    color: black;
+    background: #FFBC42;
+    cursor: pointer;
 }
 
 .gate {
-    color: #666;
     margin: 0px;
     font-size: 58px;
     padding-top: 20px;
@@ -47,14 +95,13 @@ header {
 }
 
 #today {
-    color: #666;
     margin: 0px 0px 0px 20px;
     font-size: 58px;
     display: inline-block;
 }
 
 main {
-    background-color: #369;
+    background-color: #519D9E;
     height: 650px;
 }
 
@@ -63,7 +110,6 @@ p {
 }
 
 .first_line {
-    color: cornsilk;
     font-size: 33px;
     margin-left: 50px;
     margin-right: 50px;
@@ -78,7 +124,6 @@ p {
 }
 
 .second_line {
-    color: cornsilk;
     font-size: 42px;
     margin-left: 50px;
 }
@@ -94,12 +139,11 @@ p {
 }
 
 .left {
-    color: cornsilk;
     font-size: 33px;
     margin-left: 50px;
     float: left;
     width: 600px;
-    height: 500px;
+    height: 400px;
 }
 
 #destination {
@@ -107,7 +151,6 @@ p {
 }
 
 .right_1 {
-    color: cornsilk;
     font-size: 33px;
 }
 
@@ -125,21 +168,20 @@ p {
 
 #time {
     display: inline-block;
-    color: cornsilk;
 }
 
 #changedTime {
     display: inline-block;
-    color: gold;
+    color:  #519D9E;
+    background-color:#E0E3DA ;
+    padding: 0px 30px 0px 30px;
 }
 
 .right_3 {
-    color: cornsilk;
     font-size: 33px;
 }
 
 #notice {
-    color: cornsilk;
     font-size: 42px;
 }
 
