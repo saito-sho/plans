@@ -33,15 +33,15 @@ function checkTime() {
         window.document.getElementById('noneTime').innerText = '＊定刻を入力してください';
     } else if (!(time.match(/^[0-9:]+$/))) {
         window.document.getElementById('noneTime').innerText = "＊時刻は半角数字で入力してください";
-    } else if (time.length > 5) {
-        window.document.getElementById('noneTime').innerText = "＊時刻は5文字以内で入力してください";
+    } else if (time.length > 5 || time.length <= 4) {
+        window.document.getElementById('noneTime').innerText = "＊時刻を正しく入力してください";
     } else if (time !== null && changedTime === null || changedTime === "") {
         window.document.getElementById('time').innerText = time;
     } else if (!(changedTime.match(/^[0-9:]+$/))) {
         window.document.getElementById('noneTime').innerText = "＊変更時刻は半角数字で入力してください";
         window.document.getElementById('time').innerText = time;
-    } else if (changedTime.length > 5) {
-        window.document.getElementById('noneTime').innerText = "＊変更時刻は5文字以内で入力してください";
+    } else if (changedTime.length > 5 || changedTime.length <= 4) {
+        window.document.getElementById('noneTime').innerText = "＊変更時刻を正しく入力してください";
         window.document.getElementById('time').innerText = time;
     } else {
         window.document.getElementById('time').innerText = time;
@@ -64,8 +64,8 @@ function checkNotice() {
 
 // エラー時の入力画面
 function description() {
-    if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "" || !(time.match(/^[0-9:]+$/)) || !(changedTime.match(/^[0-9:]+$/))
-        || company.length > 12 || flight.length > 12 || destination.length > 10 || notice.length > 30) {
+    if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "" || !(time.match(/^[0-9:]+$/)) || !(changedTime.match(/^[0-9:]*$/))
+        || company.length > 12 || flight.length > 12 || destination.length > 10 ||(time.length > 5 || time.length <= 4)||(changedTime.length > 5 || changedTime.length <= 4)|| notice.length > 30) {
         window.document.getElementById('description').innerText = '必須項目を入力してください';
         textCreate('textCompany', '会社名', '必須,12文字以内', company, 't-company', 12);
         textCreate('textFlight', '便名', '必須,12文字以内', flight, 't-flight', 12);
@@ -73,11 +73,11 @@ function description() {
         textCreate('textTime', '定刻', '必須,例：12:00', time, 't-time', 5);
         textCreate('textChangedTime', '変更時間', '任意,例12:30', changedTime, 't-changedTime', 5);
         textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
-        btnCreate("o-btn","outputBtn","決定","textInput()");
+        btnCreate("o-btn", "outputBtn", "決定", "textInput()");
         window.document.getElementById("error").style.border = "5px solid white";
         window.document.getElementById("error").style.height = "160px";
     } else {
-        btnCreate("p-btn","parametersBtn","データ更新","update()");
+        btnCreate("p-btn", "parametersBtn", "データ更新", "update()");
         window.document.getElementById("header-text").style.paddingLeft = "100px"
     }
 }
@@ -101,11 +101,11 @@ function textCreate(a, b, c, d, id, word) {
 }
 
 // 発行ボタンとパラメター生成ボタンの表示
-function btnCreate(divBtn,btnId,value,onclick) {
+function btnCreate(divBtn, btnId, value, onclick) {
     const text = window.document.getElementById(divBtn);
     const input = document.createElement("input");
     input.setAttribute("type", "submit");
-    input.setAttribute("id",btnId)
+    input.setAttribute("id", btnId)
     input.setAttribute("value", value);
     input.setAttribute("onclick", onclick);
     text.appendChild(input);
@@ -137,7 +137,7 @@ function update() {
     textCreate('textTime', '定刻', '必須,例:12:00', time, 't-time', 5);
     textCreate('textChangedTime', '変更時間', '任意,例:12:30', changedTime, 't-changedTime', 5);
     textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
-    btnCreate("o-btn","outputBtn","決定","textInput()");
+    btnCreate("o-btn", "outputBtn", "決定", "textInput()");
     window.document.getElementById("error").style.border = "5px solid white";
     window.document.getElementById("error").style.height = "160px";
     window.document.getElementById("header-text").style.paddingLeft = "0px"

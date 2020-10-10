@@ -19,3 +19,5 @@ const btn = window.document.getElementById('outputLink')
 }
 
  !(changedTime === null) ||
+
+  window.document.getElementById('changedTime').innerText=""
