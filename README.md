@@ -21,3 +21,6 @@ const btn = window.document.getElementById('outputLink')
  !(changedTime === null) ||
 
   window.document.getElementById('changedTime').innerText=""
+
+  
+(changedTime.length > 5 || changedTime.length <4)||

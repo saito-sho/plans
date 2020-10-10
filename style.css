@@ -1,13 +1,13 @@
 html {
     max-width: 100%;
     height: auto;
-    background-color:#E0E3DA;
+    background-color: #E0E3DA;
 }
 
 #error {
     text-align: center;
     color: red;
-    background-color:#E0E3DA ;
+    background-color: #E0E3DA;
     font-size: 20px;
     height: 0px;
 }
@@ -25,18 +25,18 @@ html {
     display: inline-block;
 }
 
-#outputBtn{
+#outputBtn {
     text-align: center;
     color: white;
     border: 2px solid black;
-  border-radius: 0;
-  background: #519D9E;
-  transition: 0.5s;
-  width: 100px;
-  height: 30px;
+    border-radius: 0;
+    background: #519D9E;
+    transition: 0.5s;
+    width: 100px;
+    height: 30px;
 }
 
-#outputBtn:hover{
+#outputBtn:hover {
     color: black;
     background: #FFBC42;
     cursor: pointer;
@@ -47,41 +47,40 @@ body {
     width: 1280px;
 }
 
-.color{
-    color:#E0E3DA;
+.color {
+    color: #E0E3DA;
 }
 
-.color2{
+.color2 {
     color: white;
 }
 
 header {
-    background-color:#58C9B9;
+    background-color: #58C9B9;
     height: 118px;
 }
 
-#header-text{
+#header-text {
     text-align: center;
 }
 
-
-#p-btn{
+#p-btn {
     float: right;
     display: block;
 }
 
-#parametersBtn{
+#parametersBtn {
     text-align: center;
     color: white;
     border: 2px solid #000;
-  border-radius: 0;
-  background: #519D9E;
-  transition: 0.5s;
-  width: 100px;
-  height: 30px;
+    border-radius: 0;
+    background: #519D9E;
+    transition: 0.5s;
+    width: 100px;
+    height: 30px;
 }
 
-#parametersBtn:hover{
+#parametersBtn:hover {
     color: black;
     background: #FFBC42;
     cursor: pointer;
@@ -91,7 +90,6 @@ header {
     margin: 0px;
     font-size: 58px;
     padding-top: 20px;
-
 }
 
 #today {
@@ -119,7 +117,7 @@ p {
     width: 590px;
 }
 
-.first_2{
+.first_2 {
     width: 550px;
 }
 
@@ -172,8 +170,8 @@ p {
 
 #changedTime {
     display: inline-block;
-    color:  #519D9E;
-    background-color:#E0E3DA ;
+    color: #519D9E;
+    background-color: #E0E3DA;
     padding: 0px 30px 0px 30px;
 }
 
