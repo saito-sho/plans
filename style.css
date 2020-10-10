@@ -181,6 +181,9 @@ p {
 
 #notice {
     font-size: 42px;
+    padding-left: 640px;
+    word-wrap: break-word;
+    
 }
 
 input[type=text] {
