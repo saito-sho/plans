@@ -1,13 +1,13 @@
 html {
     max-width: 100%;
     height: auto;
-    background-color: #E0E3DA;
+    background-color: #D8E6E7;
 }
 
 #error {
     text-align: center;
     color: red;
-    background-color: #E0E3DA;
+    background-color:  #D8E6E7;
     font-size: 20px;
     height: 0px;
 }
@@ -48,11 +48,11 @@ body {
 }
 
 .color {
-    color: #E0E3DA;
+    color: #FFFFF3;
 }
 
 .color2 {
-    color: white;
+    color:#FFFFF3;
 }
 
 header {
@@ -71,7 +71,7 @@ header {
 
 #parametersBtn {
     text-align: center;
-    color: white;
+    color: #FFFFF3;
     border: 2px solid #000;
     border-radius: 0;
     background: #519D9E;
@@ -171,7 +171,7 @@ p {
 #changedTime {
     display: inline-block;
     color: #519D9E;
-    background-color: #E0E3DA;
+    background-color:  #FFFFF3;
     padding: 0px 30px 0px 30px;
 }
 
