@@ -11,12 +11,19 @@ let notice = params.get('notice');
 
 
 // クエリパラメータチェック
-check('noneCompany', '会社名', 'company', company, 12);
-check('noneFlight', '便名', 'flight', flight, 12);
-check('noneDestination', '行先', 'destination', destination, 12);
-checkTime();
-checkNotice();
+start();
 description();
+
+
+function start() {
+    if (url !== location.href) {
+        check('noneCompany', '会社名', 'company', company, 12);
+        check('noneFlight', '便名', 'flight', flight, 12);
+        check('noneDestination', '行先', 'destination', destination, 12);
+        checkTime();
+        checkNotice();
+    }
+}
 
 function check(a, b, c, d, word) {
     if (d === null || d === "") {
@@ -147,10 +154,8 @@ function update() {
 
 }
 
-
-
-// 今日の日付
-const today = new Date();
-const month = today.getMonth() + 1;
-const day = today.getDate();
-window.document.getElementById('today').innerText = month + "-" + day;
+    // 今日の日付
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    window.document.getElementById('today').innerText = month + "-" + day;
