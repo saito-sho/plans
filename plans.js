@@ -43,14 +43,14 @@ function checkTime() {
         window.document.getElementById('noneTime').innerText = '＊定刻を入力してください';
     } else if (!(time.match(/^[0-9:]+$/))) {
         window.document.getElementById('noneTime').innerText = "＊時刻は半角数字で入力してください";
-    } else if (time.length > 5 || time.length <= 4) {
+    } else if (time.length > 5 || time.length < 4) {
         window.document.getElementById('noneTime').innerText = "＊時刻を正しく入力してください";
     } else if (time !== null && changedTime === null || changedTime === "") {
         window.document.getElementById('time').innerText = time;
     } else if (!(changedTime.match(/^[0-9:]*$/))) {
         window.document.getElementById('noneTime').innerText = "＊変更時刻は半角数字で入力してください";
         window.document.getElementById('time').innerText = time;
-    } else if (changedTime.length > 5 || changedTime.length <= 4) {
+    } else if (changedTime.length > 5 || changedTime.length < 4) {
         window.document.getElementById('noneTime').innerText = "＊変更時刻を正しく入力してください";
         window.document.getElementById('time').innerText = time;
     } else {
@@ -75,7 +75,7 @@ function checkNotice() {
 // エラー時の入力画面
 function description() {
     if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "" || !(time.match(/^[0-9:]+$/)) || !(changedTime.match(/^[0-9:]*$/)) ||
-        company.length > 12 || flight.length > 12 || destination.length > 12 || time.length > 5 || time.length <= 4 || changedTime.length > 5 || changedTime.length <= 4 && changedTime.length >= 1 || notice.length > 30) {
+        company.length > 12 || flight.length > 12 || destination.length > 12 || time.length > 5 || time.length < 4 || changedTime.length > 5 || changedTime.length < 4 && changedTime.length >= 1 || notice.length > 30) {
         window.document.getElementById('description').innerText = '必須項目を入力してください';
         textCreate('textCompany', '会社名', '必須,12文字以内', company, 't-company', 12);
         textCreate('textFlight', '便名', '必須,12文字以内', flight, 't-flight', 12);
