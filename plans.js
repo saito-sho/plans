@@ -13,7 +13,7 @@ let notice = params.get('notice');
 // クエリパラメータチェック
 check('noneCompany', '会社名', 'company', company, 12);
 check('noneFlight', '便名', 'flight', flight, 12);
-check('noneDestination', '行先', 'destination', destination, 10);
+check('noneDestination', '行先', 'destination', destination, 12);
 checkTime();
 checkNotice();
 description();
@@ -68,11 +68,11 @@ function checkNotice() {
 // エラー時の入力画面
 function description() {
     if (company === null || flight === null || destination === null || time === null || company === "" || flight === "" || destination === "" || time === "" || !(time.match(/^[0-9:]+$/)) || !(changedTime.match(/^[0-9:]*$/)) ||
-        company.length > 12 || flight.length > 12 || destination.length > 10 || time.length > 5 || time.length <= 4 || changedTime.length > 5 || changedTime.length <= 4 && changedTime.length >= 1 || notice.length > 30) {
+        company.length > 12 || flight.length > 12 || destination.length > 12 || time.length > 5 || time.length <= 4 || changedTime.length > 5 || changedTime.length <= 4 && changedTime.length >= 1 || notice.length > 30) {
         window.document.getElementById('description').innerText = '必須項目を入力してください';
         textCreate('textCompany', '会社名', '必須,12文字以内', company, 't-company', 12);
         textCreate('textFlight', '便名', '必須,12文字以内', flight, 't-flight', 12);
-        textCreate('textDestination', '行先', '必須,10文字以内', destination, 't-destination', 10);
+        textCreate('textDestination', '行先', '必須,12文字以内', destination, 't-destination', 12);
         textCreate('textTime', '定刻', '必須,例：12:00', time, 't-time', 5);
         textCreate('textChangedTime', '変更時間', '任意,例12:30', changedTime, 't-changedTime', 5);
         textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
@@ -136,7 +136,7 @@ function update() {
     window.document.getElementById('description').innerText = '更新箇所を入力してください';
     textCreate('textCompany', '会社名', '必須,12文字以内', company, 't-company', 12);
     textCreate('textFlight', '便名', '必須,12文字以内', flight, 't-flight', 12);
-    textCreate('textDestination', '行先', '必須,10文字以内', destination, 't-destination', 10);
+    textCreate('textDestination', '行先', '必須,12文字以内', destination, 't-destination', 12);
     textCreate('textTime', '定刻', '必須,例:12:00', time, 't-time', 5);
     textCreate('textChangedTime', '変更時間', '任意,例:12:30', changedTime, 't-changedTime', 5);
     textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
