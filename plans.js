@@ -8,7 +8,7 @@ let destination = params.get('destination');
 let time = params.get('time');
 let changedTime = params.get('changedTime');
 let notice = params.get('notice');
-
+let color = params.get('color');
 
 // クエリパラメータチェック
 start();
@@ -22,6 +22,7 @@ function start() {
         check('noneDestination', '行先', 'destination', destination, 12);
         checkTime();
         checkNotice();
+        checkColor1()
     }
 }
 
@@ -71,6 +72,51 @@ function checkNotice() {
     }
 }
 
+function checkColor1() {
+    switch (color) {
+        case "grenn":
+            changeCss("style-min.css");
+            break;
+        case "navy":
+            changeCss("style-navy.css");
+            break;
+        case "monochrome":
+            changeCss("style-monochrome.css");
+            break;
+        case "khaki":
+            changeCss("style-khaki.css");
+            break;
+        case "maroon":
+            changeCss("style-maroon.css");
+            break;
+    }
+}
+
+function checkColor2() {
+    switch (color) {
+        case "grenn":
+            document.getElementById("green").setAttribute("selected", "");
+            changeCss("style-min.css");
+            break;
+        case "navy":
+            document.getElementById("navy").setAttribute("selected", "");
+            changeCss("style-navy.css");
+            break;
+        case "monochrome":
+            document.getElementById("monochrome").setAttribute("selected", "");
+            changeCss("style-monochrome.css");
+            break;
+        case "khaki":
+            document.getElementById("khaki").setAttribute("selected", "");
+            changeCss("style-khaki.css");
+            break;
+        case "maroon":
+            document.getElementById("maroon").setAttribute("selected", "");
+            changeCss("style-maroon.css");
+            break;
+    }
+}
+
 
 // エラー時の入力画面
 function description() {
@@ -83,6 +129,8 @@ function description() {
         textCreate('textTime', '定刻', '必須,例：12:00', time, 't-time', 5);
         textCreate('textChangedTime', '変更時間', '任意,例12:30', changedTime, 't-changedTime', 5);
         textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
+        pullCreate();
+        changePull();
         btnCreate("o-btn", "outputBtn", "決定", "textInput()");
         window.document.getElementById("error").style.border = "5px solid white";
         window.document.getElementById("error").style.height = "160px";
@@ -110,6 +158,73 @@ function textCreate(a, b, c, d, id, word) {
     }
 }
 
+// 色を変えるプルダウン作成
+function pullCreate() {
+    window.document.getElementById("pullDown").innerText = "カラー変更";
+    const pullFore = window.document.getElementById("pullDown");
+    const form = document.createElement("form");
+    form.setAttribute("name", "pullForm");
+    form.setAttribute("id", "pullForm");
+    pullFore.appendChild(form);
+    const pull = window.document.getElementById("pullForm");
+    const select = document.createElement("select");
+    select.setAttribute("name", "changeColor");
+    select.setAttribute("id", "changeColor");
+    select.setAttribute("onChange", "changePull()");
+    pull.appendChild(select);
+    inPull("noneColor", "色を選んでください");
+    inPull("green", "グリーン");
+    inPull("navy", "ネイビー");
+    inPull("monochrome", "モノクロ");
+    inPull("khaki", "カーキ");
+    inPull("maroon", "マルーン");
+}
+// プルダウンの項目
+function inPull(valueColor, color) {
+    const changeColor = window.document.getElementById("changeColor");
+    const option = document.createElement("option");
+    option.setAttribute("value", valueColor);
+    option.setAttribute("id", valueColor);
+    changeColor.appendChild(option);
+    window.document.getElementById(valueColor).innerText = color;
+}
+
+// プルダウン選択時の色
+function changePull() {
+    const select = document.pullForm.changeColor;
+    const index = select.selectedIndex;
+    checkColor2();
+    document.getElementById("noneColor").setAttribute("disabled", "");
+    switch (select.options[index].id) {
+        case "green":
+            changeCss("style-min.css");
+            return color = "green";
+        case "navy":
+            changeCss("style-navy.css");
+            return color = "navy";
+        case "monochrome":
+            changeCss("style-monochrome.css");
+            return coler = "monochrome";
+        case "khaki":
+            changeCss("style-khaki.css");
+            return coler = "khaki";
+        case "maroon":
+            changeCss("style-maroon.css");
+            return coler = "maroon";
+    }
+}
+
+// カラー変更時にcss変更
+function changeCss(css) {
+    const d = document;
+    const link = d.createElement('link');
+    link.href = css;
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    const h = d.getElementsByTagName('head')[0];
+    h.appendChild(link);
+}
+
 // 発行ボタンとパラメター生成ボタンの表示
 function btnCreate(divBtn, btnId, value, onclick) {
     const text = window.document.getElementById(divBtn);
@@ -135,6 +250,7 @@ function textInput() {
     params.set('time', time);
     params.set('changedTime', changedTime);
     params.set('notice', notice);
+    params.set('color', color);
 
     document.location = url + '?' + params.toString();
 }
@@ -148,14 +264,16 @@ function update() {
     textCreate('textChangedTime', '変更時間', '任意,例:12:30', changedTime, 't-changedTime', 5);
     textCreate('textNotice', '備考', '任意,30文字以内', notice, 't-notice', 30);
     btnCreate("o-btn", "outputBtn", "決定", "textInput()");
-    window.document.getElementById("error").style.border = "5px solid white";
+    pullCreate();
+    changePull();
+    window.document.getElementById("error").style.border = "5px solid white ";
     window.document.getElementById("error").style.height = "160px";
     window.document.getElementById("header-text").style.paddingLeft = "0px"
 
 }
 
-    // 今日の日付
-    const today = new Date();
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
-    window.document.getElementById('today').innerText = month + "-" + day;
+// 今日の日付
+const today = new Date();
+const month = today.getMonth() + 1;
+const day = today.getDate();
+window.document.getElementById('today').innerText = month + "-" + day;

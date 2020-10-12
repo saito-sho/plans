@@ -1,4 +1,8 @@
-html {
+*{
+    transition: 0.8s;
+}
+
+#html {
     max-width: 100%;
     height: auto;
     background-color: #D8E6E7;
@@ -12,6 +16,7 @@ html {
     height: 0px;
 }
 
+
 .error {
     display: inline-block;
 }
@@ -20,7 +25,7 @@ html {
     color: black;
 }
 
-#textCompany, #textFlight, #textDestination, #textTime, #textChangedTime, #textNotice {
+#textCompany, #textFlight, #textDestination, #textTime, #textChangedTime, #textNotice,#pullDown,#pullForm {
     color: black;
     display: inline-block;
 }
@@ -191,4 +196,9 @@ p {
 input[type=text] {
     width: 200px;
     height: 15px;
+}
+
+select{
+    width: 150px;
+    height: 20px;
 }

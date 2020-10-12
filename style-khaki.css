@@ -1,0 +1,60 @@
+#html {
+    background-color: #E0D5C6;
+}
+
+#error {
+    background-color: #E0D5C6;
+}
+
+#description {
+    color: black;
+}
+
+#textCompany, #textFlight, #textDestination, #textTime, #textChangedTime, #textNotice, #pullDown, #pullForm {
+    color: black;
+}
+
+.color {
+    color: #FFFFF3;
+}
+
+.color2 {
+    color: #FFFFF3;
+}
+
+header {
+    background-color: #426E5F;
+}
+
+#parametersBtn {
+    text-align: center;
+    color: #FFFFF3;
+    border: 2px solid #000;
+    background: #928562;
+}
+
+#parametersBtn:hover {
+    color: black;
+    background: #FFBC42;
+}
+
+#outputBtn {
+    color: white;
+    border: 2px solid black;
+    background: #426E5F;
+    transition: 0.5s;
+}
+
+#outputBtn:hover {
+    color: black;
+    background: #FFBC42;
+}
+
+main {
+    background-color: #928562;
+}
+
+#changedTime {
+    color: #FFFFF3;
+    background-color: #426E5F;
+}
