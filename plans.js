@@ -204,13 +204,13 @@ function changePull() {
             return color = "navy";
         case "monochrome":
             changeCss("style-monochrome.css");
-            return coler = "monochrome";
+            return color = "monochrome";
         case "khaki":
             changeCss("style-khaki.css");
-            return coler = "khaki";
+            return color = "khaki";
         case "maroon":
             changeCss("style-maroon.css");
-            return coler = "maroon";
+            return color = "maroon";
     }
 }
 
