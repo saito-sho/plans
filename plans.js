@@ -94,7 +94,7 @@ function checkColor1() {
 
 function checkColor2() {
     switch (color) {
-        case "grenn":
+        case "green":
             document.getElementById("green").setAttribute("selected", "");
             changeCss("style-min.css");
             break;
