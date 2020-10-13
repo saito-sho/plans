@@ -1,5 +1,5 @@
 #html {
-    background-color:#f8ecc9;
+    background-color: #f8ecc9;
 }
 
 #error {
@@ -10,7 +10,7 @@
     color: black;
 }
 
-#textCompany, #textFlight, #textDestination, #textTime, #textChangedTime, #textNotice,#pullDown,#pullForm {
+#textCompany, #textFlight, #textDestination, #textTime, #textChangedTime, #textNotice, #pullDown, #pullForm {
     color: black;
 }
 
@@ -35,7 +35,7 @@ header {
 
 #parametersBtn:hover {
     color: black;
-    background:  #FFFFF3;
+    background: #FFFFF3;
 }
 
 #outputBtn {
