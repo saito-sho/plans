@@ -10,6 +10,8 @@ let changedTime = params.get('changedTime');
 let notice = params.get('notice');
 let color = params.get('color');
 
+let errorScore=0;
+
 // クエリパラメータチェック
 start();
 description();
@@ -29,8 +31,10 @@ function start() {
 function check(a, b, c, d, word) {
     if (d === null || d === "") {
         window.document.getElementById(a).innerText = `＊${b}を入力してください`;
+        errorScore++;
     } else if (d.length > word) {
         window.document.getElementById(a).innerText = `＊${b}を${word}文字以内で入力してください`;
+        errorScore++;
     } else {
         window.document.getElementById(c).innerText = d;
     }
@@ -42,17 +46,22 @@ function checkTime() {
     }
     if (time === null || time === "") {
         window.document.getElementById('noneTime').innerText = '＊定刻を入力してください';
+        errorScore++;
     } else if (!(time.match(/^[0-9:]+$/))) {
         window.document.getElementById('noneTime').innerText = "＊時刻は半角数字で入力してください";
+        errorScore++;
     } else if (time.length > 5 || time.length < 4) {
         window.document.getElementById('noneTime').innerText = "＊時刻を正しく入力してください";
+        errorScore++;
     } else if (time !== null && changedTime === null || changedTime === "") {
         window.document.getElementById('time').innerText = time;
     } else if (!(changedTime.match(/^[0-9:]*$/))) {
         window.document.getElementById('noneTime').innerText = "＊変更時刻は半角数字で入力してください";
+        errorScore++;
         window.document.getElementById('time').innerText = time;
     } else if (changedTime.length > 5 || changedTime.length < 4) {
         window.document.getElementById('noneTime').innerText = "＊変更時刻を正しく入力してください";
+        errorScore++;
         window.document.getElementById('time').innerText = time;
     } else {
         window.document.getElementById('time').innerText = time;
@@ -67,6 +76,7 @@ function checkNotice() {
     }
     if (notice.length > 30) {
         window.document.getElementById('noneNotice').innerText = '＊備考は30文字以内で入力してください';
+        errorScore++;
     } else {
         window.document.getElementById('notice').innerText = notice;
     }
@@ -117,6 +127,13 @@ function checkColor2() {
     }
 }
 
+function totalError(){
+    if(errorScore>=5){
+        window.document.getElementById("error").style.height = "200px";
+    }else{
+        window.document.getElementById("error").style.height = "160px";
+    }
+}
 
 // エラー時の入力画面
 function description() {
@@ -133,7 +150,7 @@ function description() {
         changePull();
         btnCreate("o-btn", "outputBtn", "決定", "textInput()");
         window.document.getElementById("error").style.border = "5px solid white";
-        window.document.getElementById("error").style.height = "160px";
+        totalError();
     } else {
         btnCreate("p-btn", "parametersBtn", "データ更新", "update()");
         window.document.getElementById("header-text").style.paddingLeft = "100px"
@@ -267,7 +284,7 @@ function update() {
     pullCreate();
     changePull();
     window.document.getElementById("error").style.border = "5px solid white ";
-    window.document.getElementById("error").style.height = "160px";
+    totalError();
     window.document.getElementById("header-text").style.paddingLeft = "0px"
 
 }
