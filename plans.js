@@ -66,7 +66,7 @@ function checkNotice() {
         notice = "無し";
     }
     if (notice.length > 30) {
-        window.document.getElementById().innerText = '＊行先は30文字以内で入力してください';
+        window.document.getElementById('noneNotice').innerText = '＊備考は30文字以内で入力してください';
     } else {
         window.document.getElementById('notice').innerText = notice;
     }
